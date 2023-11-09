@@ -23,8 +23,8 @@
     </nav>
 
     <section id="welcome" class="welcome">
-      <h1>Hey, I am Divya Dharshan S</h1>
-      <p>An Aspiring Web Developer</p>
+        <h1>Hey, I'm <span class="type"></span></h1>
+        <p>An Aspiring Web Developer</p>
     </section>
 
     <section id="projects" class="projects-section">
@@ -103,5 +103,14 @@
       <p>&copy; Created by Divya Dharshan S
       </p>
     </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var ty = new Typed(".type",{
+        strings = ["Divya Dharshan S"],
+        typeSpeed : 150,
+        backSpeed : 150,
+        loop : true
+       })
+    </script>
 </body>
 </html>
