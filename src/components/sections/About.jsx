@@ -149,38 +149,41 @@ export const About = () => {
                 Educational Journey
               </span>
             </h3>
-            
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-cyan-400"></div>
-              
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-cyan-400"></div>
               {educationTimeline.map((education, index) => (
-                <div key={index} className={`relative mb-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  <div className={`flex items-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
-                    <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'} ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
-                      <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-500/30 transition-all hover:-translate-y-1">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-2xl">{education.icon}</span>
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            education.status === 'current' 
-                              ? 'bg-blue-500/20 text-blue-400' 
-                              : 'bg-green-500/20 text-green-400'
-                          }`}>
-                            {education.status === 'current' ? 'Current' : 'Completed'}
-                          </span>
-                        </div>
-                        <h4 className="text-lg font-bold text-white mb-2">{education.title}</h4>
-                        <p className="text-blue-400 font-medium mb-2">{education.institution}</p>
-                        <p className="text-gray-400 text-sm mb-3">{education.description}</p>
-                        <span className="text-cyan-400 text-sm font-mono">{education.year}</span>
+                <div
+                  key={index}
+                  className={
+                    `relative mb-12 flex flex-col items-center md:mb-16 ` +
+                    (index % 2 === 0
+                      ? 'md:flex-row md:items-center'
+                      : 'md:flex-row-reverse md:items-center')
+                  }
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full border-4 border-blue-500 bg-black flex items-center justify-center z-10">
+                    <div className={`w-3 h-3 rounded-full bg-blue-400 ${education.status === 'current' ? 'animate-pulse' : ''}`}></div>
+                  </div>
+                  {/* Card */}
+                  <div
+                    className={
+                      'mt-8 md:mt-0 w-full md:w-1/2 ' +
+                      (index % 2 === 0
+                        ? 'md:pr-12 md:text-right md:justify-end'
+                        : 'md:pl-12 md:text-left md:justify-start')
+                    }
+                  >
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-500/30 transition-all hover:-translate-y-1 mx-auto max-w-md">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-2xl">{education.icon}</span>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${education.status === 'current' ? 'bg-blue-500/20 text-blue-400' : 'bg-green-500/20 text-green-400'}`}>{education.status === 'current' ? 'Current' : 'Completed'}</span>
                       </div>
-                    </div>
-                    
-                    {/* Timeline Dot */}
-                    <div className={`absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full border-4 border-blue-500 bg-black flex items-center justify-center z-10 ${
-                      education.status === 'current' ? 'animate-pulse' : ''
-                    }`}>
-                      <div className="w-3 h-3 rounded-full bg-blue-400"></div>
+                      <h4 className="text-lg font-bold text-white mb-2">{education.title}</h4>
+                      <p className="text-blue-400 font-medium mb-2">{education.institution}</p>
+                      <p className="text-gray-400 text-sm mb-3">{education.description}</p>
+                      <span className="text-cyan-400 text-sm font-mono">{education.year}</span>
                     </div>
                   </div>
                 </div>
