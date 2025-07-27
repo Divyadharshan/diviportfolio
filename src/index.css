@@ -36,6 +36,42 @@ body {
   .animate-loading-bar {
     animation: loading 0.8s ease infinite;
   }
+
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  .animate-twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  @keyframes shooting-star {
+    0% {
+      transform: translateX(-50px) translateY(-50px) rotate(60deg);
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(calc(100vw + 50px)) translateY(calc(100vh + 200px)) rotate(60deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-shooting-star {
+    animation: shooting-star 8s linear infinite;
+  }
 }
 
 .reveal {

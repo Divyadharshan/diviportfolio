@@ -50,8 +50,11 @@ const codingProfiles = [
 
 export const SocialProfiles = () => (
   <section className="flex flex-col items-center py-8" id="social-profiles">
-    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-      Social Media
+    <h2 className="text-3xl font-bold mb-8 text-center">
+      <span>📱</span>{" "}
+      <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+        Social Media
+      </span>
     </h2>
     <div className="flex flex-wrap gap-8 justify-center">
       {socialProfiles.map((profile) => (
@@ -72,8 +75,11 @@ export const SocialProfiles = () => (
 
 export const CodingProfiles = () => (
   <section className="flex flex-col items-center py-8" id="coding-profiles">
-    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-      Coding Platforms
+    <h2 className="text-3xl font-bold mb-8 text-center">
+      <span>💻</span>{" "}
+      <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+        Coding Platforms
+      </span>
     </h2>
     <div className="flex flex-wrap gap-8 justify-center">
       {codingProfiles.map((profile) => (
